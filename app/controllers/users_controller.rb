@@ -6,8 +6,7 @@ class UsersController < ApplicationController
    def create
     @user = User.new(user_params)
     if @user.save
-      
-      flash.now[:success] = 'Welcome! Ton compte est créé'
+      log_in @user
       redirect_to secret_path
     else
       render 'new'
@@ -33,6 +32,9 @@ class UsersController < ApplicationController
 end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
 

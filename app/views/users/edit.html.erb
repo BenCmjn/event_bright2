@@ -18,10 +18,13 @@
 
       <%= f.submit "sauvegarder", class: "btn btn-primary" %>
     <% end %>
-
+<p> <%= link_to "Supprimer mon profil", user_path(@user),
+              method: :delete,
+              data: { confirm: 'faut-il vraiment supprimer votre profil ? vous allez nous manquer!' } %> </p>
     </div>
   </div>
 </div>
+
 
 <% else %>
 

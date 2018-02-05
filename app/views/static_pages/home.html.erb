@@ -4,7 +4,7 @@
 <% if logged_in? %>
   <%= link_to "Oui, connaitre le secret", secret_path, class: "btn btn-lg btn-primary" %>
   <% else %>
-   <%= link_to "Oui, connaitre le secret", new_user_path, class: "btn btn-lg btn-primary" %>
+   <%= link_to "Oui, connaitre le secret", login_path, class: "btn btn-lg btn-primary" %>
    <% end %>
 </div>
 
