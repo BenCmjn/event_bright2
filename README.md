@@ -1,24 +1,9 @@
-# README
+# Secret App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L'application a toute les features demandés, mêmes celles des champions!
 
-Things you may want to cover:
+En cas de bug, n'hésite pas à me contacter sur @YannP
 
-* Ruby version
+voici le lien Heroku : https://peaceful-coast-53884.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy!
