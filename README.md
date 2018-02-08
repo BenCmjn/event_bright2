@@ -1,5 +1,12 @@
 # EventBriTHP [GO](https://ben-bright-two.herokuapp.com/)
 
-En cas de bug, n'hésite pas à me contacter sur @Ben Cmjn
+:grimacing: @Ben Cmjn su Slack :wink: 
+
+Vous pouvez créer un compte ou essayer avec celui-ci :
+
+| compte        | test               |
+| ------------: |:------------------:|
+| email         | bonjour@bonjour.com|
+| mdp           | bonjour            |
 
 Enjoy!
