@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   get 'sessions/new'
 
 
@@ -8,8 +10,8 @@ Rails.application.routes.draw do
   get 'static_pages/home'
 
   get 'static_pages/secret', as: 'secret'
-
   get 'users/new', as: 'new_user'
+  get 'events/index', as: 'event'
 
 
   get 'users/show'
@@ -22,4 +24,5 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+  resources :events
 end
