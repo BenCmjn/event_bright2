@@ -29,7 +29,22 @@ class EventsController < ApplicationController
   	@event = Event.find(params[:id])
   end
 
+  def subscribe
+  	@event = Event.find(params[:id])
+  	if 
+  		@event.attendees.include? current_user
+  		flash[:danger] = "Vous êtes déjà inscrit à #{@event.description}…"
+  		redirect_to @event
+  	else
+  		@event.attendees << current_user
+  		flash[:success] = "Vous participez à #{@event.description} !"
+  		redirect_to @event
+  	end
+  end
 
-  
+  def add_user
+  	@user = User.find(params[:id])
+  	@event = Event.find(params[:test])
+  end
 
 end

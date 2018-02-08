@@ -3,11 +3,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-   def create
+  def create
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to secret_path
+      redirect_to event_path
     else
       render 'new'
     end
@@ -15,21 +15,20 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @events = Event.all
   end
 
-    def edit
+  def edit
     @user = User.find(params[:id])
-
-    end
-  
+  end
 
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user
     else render 'edit'
+    end
   end
-end
 
   def destroy
     @user = User.find(params[:id])
@@ -37,11 +36,9 @@ end
     redirect_to root_path
   end
 
-
-   private
-
-    def user_params
-      params.require(:user).permit(:email, :password,
-                                   :password_confirmation)
-    end
+  private
+  def user_params
+    params.require(:user).permit(:email, :password,
+                                 :password_confirmation)
+  end
 end

@@ -1,3 +1,12 @@
+<h2> <% if logged_in? && !@event.attendees.include?(current_user) %>
+ <%= link_to "Rejoindre l'event", { :controller => "events", :action => "subscribe"}, class: "btn btn-success" %>
+  <% elsif logged_in? %>
+  Vous êtes inscrit
+  <% else %>
+ <%= link_to "Se connecter pour rejoindre l'évènement", login_path, class: "btn btn-lg btn-primary" %>
+  <% end %> </h2>
+
+
 <table class="table table-hover">
   <tr>
     <th>Nom de l'événement :</th>
@@ -14,4 +23,12 @@
       <td><%= @event.attendees.count %></td>
     </tr>
 </table>
-<h3> <%=link_to "revenir au menu", event_path %></h3>
+<%=link_to "revenir au menu", event_path, class: "btn btn-success" %>
+
+<h3>Ils seront là :</h3>
+<% @event.attendees.each do |attendee| %> 
+    <ul>
+    <li> <%= attendee.email %> <%= link_to(' Voir son profil', user_path(attendee)) %></li>
+    </ul>
+<% end %>
+

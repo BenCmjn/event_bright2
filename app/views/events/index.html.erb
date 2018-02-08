@@ -4,7 +4,7 @@
     <th>Lieu de l'événement</th>
     <th>Date de l'événement</th>
     <th>Créé par</th>
-    <th>Nombre de participants</th>
+    <th>Invités</th>
   </tr>
  
   <% @events.each do |event|%> 
@@ -14,8 +14,11 @@
       <td><%= event.date %></td>
       <td><%= event.creator.email %></td>
       <td><%= event.attendees.count %></td>
-      <td><%= link_to "Voir l'événement", event.id.to_s %></td>
+      <td><%= link_to "Voir l'événement", event.id.to_s, class:"btn btn-sm btn-primary" %></td>
     </tr>
-<% end %>
-
+  <% end %>
 </table>
+
+<div class="center">
+  <%= link_to "Créer un évènement", new_event_path, class: "btn btn-lg btn-success" %>
+</div>

@@ -1,14 +1,21 @@
+<h2><%= @user.email %></h2>
+
 <% if @user == current_user %>
-
-<h2>Connecté avec l'adresse <%= @user.email %></h2>
-
-
-<p></p>
-<h3><p> <%= link_to('Editer le profil', edit_user_path) %> </p> </h3>
- 
-<% else %>
-
-<h2>Bien essayé petit hacker malin! </h2>
-
+<h3>C'est vous !</h3>
+<p> <%= link_to('Editer le profil', edit_user_path) %> </p>
 <% end %>
 
+<h3>Évènements créés :</h3>
+
+    <ul>
+    <% @events.each do |event| %> 
+    	<% if event.creator == @user %>
+    	<li> <%= event.description %><%= link_to "Voir l'événement", "../events/#{event.id}", class:"btn btn-sm btn-primary" %></li>
+    	<% end %>
+	<% end %>
+	</ul>
+
+
+<%= link_to "Retour au menu", event_path, class: "btn btn-danger" %>
+
+<%= link_to "Retour à l'accueil", root_path, class: "btn btn-success" %>

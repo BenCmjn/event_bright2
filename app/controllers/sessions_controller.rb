@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
 	   log_in user
      
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to secret_path
+      redirect_to event_path
     else
-    	flash.now[:danger] = 'Identifiant ou Mot de passe invalide'
-            render 'new'
+      render 'new'
+      flash.now[:danger] = 'Identifiant ou Mot de passe invalide'
     end
   end
 
